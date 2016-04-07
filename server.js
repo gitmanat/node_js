@@ -1,8 +1,12 @@
 // JavaScript : First-class function
-// 1. function to variable
+// 2. function to argument
 
-var say = function myName() {
+function myName() {
 	console.log("Stis & Photon");
 }
 
-say();
+function say(what) {
+	what();
+}
+
+say(myName);
