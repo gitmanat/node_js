@@ -1,10 +1,8 @@
-// Event-driven
-// 2. Asynchonous
+// JavaScript : First-class function
+// 1. function to variable
 
-var fs = require('fs');
-//Add Call back function
-fs.readFile('hello.txt', function(err,data) {
-    console.log(data.toString());
-});
+var say = function myName() {
+	console.log("Stis & Photon");
+}
 
-console.log('Do other things');
+say();
