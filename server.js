@@ -1,8 +1,10 @@
 // Event-driven
-// 1. Synchonous
+// 2. Asynchonous
 
 var fs = require('fs');
-var data = fs.readFileSync('hello.txt');
+//Add Call back function
+fs.readFile('hello.txt', function(err,data) {
+    console.log(data.toString());
+});
 
-console.log(data.toString());
 console.log('Do other things');
