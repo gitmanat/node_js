@@ -13,8 +13,15 @@ var hello = function(req, res, next) {
 	res.setHeader('Content-Type', 'text/plain');
 	res.end('Hello Stis & Photon');
 };
+
+var goodbye = function(req, res, next) {
+	res.setHeader('content-Type', 'text/plain');
+	res.end('Goodbye Stis & Photon');
+};
+
 app.use(logger);
-app.use(hello);
+app.use('/hello', hello);
+app.use('/goodbye', goodbye);
 
 app.listen(3000);
 console.log('Server running at http://localhost:3000');
