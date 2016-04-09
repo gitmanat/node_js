@@ -1,13 +1,13 @@
-// JavaScript : Closure
-// Closure = function all env parent
+// Closure and Event-driven
 
-function parent() {
-	var x = 1;
-
-	function child() {
-		console.log(x);
-	}
-	return child;
+function prefix(pre) {
+	return function fileHandler(err, data) {
+		console.log(pre + " " + data);
+	};
 }
-var childFn = parent();
-childFn();
+var say = prefix("Say:");             // Closure
+var shout = prefix("Shout:");          // Closure
+
+var fs = require('fs');
+fs.readFile('hello.txt', say);
+fs.readFile('hello.txt', shout);
