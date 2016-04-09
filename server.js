@@ -1,12 +1,8 @@
-// Begin http on node.js
+// Connect module : management request by Connect module
 
-var http = require('http');
+var connect = require('connect');
+var app = connect();
 
-http.createServer(function(req, res) {
-	res.writeHead(200, {
-		'Content-Type': 'text/plain'
-	});
-	res.end('Hello Stis & Photon');
-}).listen(3000);
+app.listen(3000);
 
 console.log('Server running at http://localhost:3000');
