@@ -2,6 +2,7 @@
   "name": "Myproject",
   "version": "1.0.0",
   "dependencies": {
-    "connect": "~3.4.1"
+    "connect": "~3.4.1",
+    "express": "~4.13.4"
   }
 }

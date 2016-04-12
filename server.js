@@ -1,7 +1,7 @@
-// Connect module : Order middleware
+// Express module : Mounting request path
 
-var connect = require('connect');
-var app = connect();
+var express = require('express');
+var app = express();
 
 var logger = function(req, res, next) {
 	console.log(req.method, req.url);
@@ -25,3 +25,5 @@ app.use('/goodbye', goodbye);
 
 app.listen(3000);
 console.log('Server running at http://localhost:3000');
+
+module.exprots = app;
