@@ -1,4 +1,4 @@
-// Express module : Mounting request path
+// Express module : express wrapper
 
 var express = require('express');
 var app = express();
@@ -10,13 +10,11 @@ var logger = function(req, res, next) {
 }
 
 var hello = function(req, res, next) {
-	res.setHeader('Content-Type', 'text/plain');
-	res.end('Hello Stis & Photon');
+	res.send('Hello Stis & Photon');       //Express wrapper : Setting Content-Type same argument
 };
 
 var goodbye = function(req, res, next) {
-	res.setHeader('content-Type', 'text/plain');
-	res.end('Goodbye Stis & Photon');
+	res.send('Goodbye Stis & Photon');     //Express wrapper : Setting Content-Type same argument
 };
 
 app.use(logger);
