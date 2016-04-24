@@ -2,7 +2,10 @@
   "name": "Myproject",
   "version": "1.0.0",
   "dependencies": {
+    "body-parser": "~1.15.0",
+    "compression": "~1.6.1",
     "connect": "~3.4.1",
-    "express": "~4.13.4"
+    "express": "~4.13.4",
+    "morgan": "~1.7.0"
   }
 }
