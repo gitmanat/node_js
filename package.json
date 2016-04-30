@@ -6,6 +6,7 @@
     "compression": "~1.6.1",
     "connect": "~3.4.1",
     "express": "~4.13.4",
+    "jade": "~1.11.0",
     "morgan": "~1.7.0"
   }
 }
