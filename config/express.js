@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var compression = require('compression');
 var bodyParser = require('body-parser');
 //var jade = require('jade');
+var sass = require('node-sass-middleware');
 
 module.exports = function() {
     var app = express();
@@ -20,6 +21,14 @@ module.exports = function() {
     app.set('view engine', 'jade');
 
     require('../app/routes/index.routes')(app);
+
+    app.use(sass({
+        src: './sass',
+        dest: './public/css',
+        outputStyle: 'compressed',
+        prefix: '/css',
+        debug : true
+    }));
 
     app.use(express.static('./public'));
     
