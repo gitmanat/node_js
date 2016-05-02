@@ -27,7 +27,8 @@ module.exports = function() {
         dest: './public/css',
         outputStyle: 'compressed',
         prefix: '/css',
-        debug : true
+        debug : true,
+        indentedSyntax: true
     }));
 
     app.use(express.static('./public'));
