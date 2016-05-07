@@ -17,6 +17,7 @@ exports.login = function(req, res) {
 	if (req.body.remember === 'remember') {
 		req.session.remember = true;
 		req.session.email = req.body.email;
+		req.session.cookie.maxAge = 60000; // milliseconds
 	}
 
 	res.render('index', {
