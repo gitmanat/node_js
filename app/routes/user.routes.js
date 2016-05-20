@@ -1,13 +1,16 @@
+var user = require('../controllers/user.controller');
+var passport = require('passport');
+
 module.exports = function(app) {
-	var user = require('../controllers/user.controller');
-    app.post('/login', user.login);
-    app.post('/logout', user.logout);
+    app.route('/signup')
+       .get(user.renderSignup)
+
     app.route('/user')
-         .post(user.create)
-         .get(user.list);
+       .post(user.create)
+       .get(user.list);
     app.route('/user/:username')
-    	 .get(user.read)
-    	 .put(user.update)
-    	 .delete(user.delete);
-    app.param('username', user.userByUsername);       
+       .get(user.read)
+       .put(user.update)
+       .delete(user.delete);
+    app.param('username', user.userByUsername);
 };
