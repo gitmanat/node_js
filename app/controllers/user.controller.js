@@ -26,6 +26,18 @@ exports.read = function(req, res) {
     res.json(req.user);
 };
 
+exports.update = function(req, res, next) {
+    User.findOneAndUpdate({username: req.user.username}, req.body,
+        function(err, user) {
+            if (err) {
+                return next(err);
+            } else {
+                res.json(user);
+            }
+
+        });
+};
+
 exports.userByUsername = function(req, res, next,username) {
     User.findOne({
         username: username
