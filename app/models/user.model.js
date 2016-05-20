@@ -6,7 +6,11 @@ var UserSchema = new Schema({
 	lastName: String,
 	username: {type: String, unique: true},
 	email: {type: String, index: true},
-	password: String
+	password: String,
+	created: {
+		type: Date,
+		default: Date.now
+	}
 });
 
 mongoose.model('User', UserSchema);
