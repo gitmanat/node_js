@@ -62,10 +62,34 @@ exports.userByUsername = function(req, res, next,username) {
     });
 };
 
-//*************************************
+//*******************************************
 
 exports.renderSignup = function(req, res) {
 	res.render('signup', {
 		title: 'Sign up'
 	});
 };
+
+exports.signup = function(req, res, next) {
+    if (!req.user) {
+        var user = new User(req.body);
+        user.provider = 'local';
+
+        user.save(function(err) {
+            if (err) {
+              
+                return res.redirect('/signup');
+             }
+
+               req.login(user, function(err) {
+                if (err) return next(err);
+                return res.redirect('/');
+            });
+        });
+    } else {
+        return res.redirect('/');
+
+    }
+};
+
+//*******************************************

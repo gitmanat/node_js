@@ -4,6 +4,7 @@ var passport = require('passport');
 module.exports = function(app) {
     app.route('/signup')
        .get(user.renderSignup)
+       .post(user.signup);
 
     app.route('/user')
        .post(user.create)
