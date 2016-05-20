@@ -22,6 +22,24 @@ exports.list = function(req, res, next) {
 	});
 };
 
+exports.read = function(req, res) {
+    res.json(req.user);
+};
+
+exports.userByUsername = function(req, res, next,username) {
+    User.findOne({
+        username: username
+    }, function(err, user) {
+        if (err) {
+            return next(err);
+        } else {
+            req.user = user;
+            next();
+        }
+    
+    });
+};
+
 //*************************************
 
 exports.login = function(req, res) {
