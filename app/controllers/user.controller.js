@@ -125,3 +125,16 @@ exports.signup = function(req, res, next) {
 };
 
 //*******************************************
+
+exports.renderLogin = function(req, res) {
+   if (!req.user) {
+    res.render('login', {
+        title: 'Log in',
+        message: req.flash('error') || req.flash('info')
+    });
+} else {
+    return res.redirect('/');
+}
+};
+
+//*******************************************

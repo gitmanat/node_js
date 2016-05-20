@@ -5,6 +5,8 @@ module.exports = function(app) {
     app.route('/signup')
        .get(user.renderSignup)
        .post(user.signup);
+    app.route('/login')
+        .get(user.renderLogin);
 
     app.route('/user')
        .post(user.create)
