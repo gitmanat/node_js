@@ -12,6 +12,7 @@ module.exports = function(app) {
                failureRedirect: '/login',
                failureFlash: true
        }));
+    app.post('/logout', user.logout);
 
     app.route('/user')
        .post(user.create)
