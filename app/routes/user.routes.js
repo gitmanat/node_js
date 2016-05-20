@@ -6,7 +6,12 @@ module.exports = function(app) {
        .get(user.renderSignup)
        .post(user.signup);
     app.route('/login')
-        .get(user.renderLogin);
+        .get(user.renderLogin)
+        .post(passport.authenticate('local',{
+               successRedirect: '/',
+               failureRedirect: '/login',
+               failureFlash: true
+       }));
 
     app.route('/user')
        .post(user.create)
