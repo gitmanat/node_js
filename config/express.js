@@ -7,6 +7,7 @@ var sass = require('node-sass-middleware');
 var validator = require('express-validator');
 var cookieSession = require('cookie-session');
 var session = require('express-session');
+var passport = require('passport');
 var config = require('./config');
 //var mongoose = require('mongoose');
 //var uri = 'mongodb://localhost/my-project';
@@ -25,6 +26,9 @@ module.exports = function() {
         resave: false,
         saveUninitialized: true
     }));
+
+    app.use(passport.initialize());
+    app.use(passport.session());
 
     app.use(bodyParser.urlencoded({
     	extended: true
