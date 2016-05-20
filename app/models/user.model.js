@@ -7,10 +7,23 @@ var UserSchema = new Schema({
 	username: {
 		type: String,
 	    unique: true,
-	    trim: true
+	    trim: true,
+	    required: true,
 	},
-	email: {type: String, index: true},
-	password: String,
+	email: {
+		type: String,
+	    index: true,
+	    match: /.+\@.+\.+/
+	},
+	password: {
+		type: String,
+		validate: [
+		   function(password) {
+		   	return password && password.length >= 6;
+		   },
+		   'password must be at least 6 characters'
+		]
+	},
 	created: {
 		type: Date,
 		default: Date.now
