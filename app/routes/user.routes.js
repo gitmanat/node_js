@@ -14,6 +14,16 @@ module.exports = function(app) {
        }));
     app.post('/logout', user.logout);
 
+//**************************************************************************
+  app.get('/oauth/facebook', passport.authenticate('facebook', {
+    scope : ['email'],         // fix [0] error
+    failureRedirect: '/login'
+  }));
+  app.get('/oauth/facebook/callback', passport.authenticate('facebook', {
+    failureRedirect: '/login',
+    successRedirect: '/'
+  }));
+
     app.route('/user')
        .post(user.create)
        .get(user.list);
