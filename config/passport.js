@@ -15,5 +15,5 @@ module.exports = function() {
 	});
 	require('./strategies/local.js')();
 	require('./strategies/facebook.js')();
-	//require('./strategies/google.js')();
+	require('./strategies/google.js')();
 };
