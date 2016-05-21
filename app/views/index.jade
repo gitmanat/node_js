@@ -7,7 +7,7 @@ html
 		h2= title
 		
 		if username
-			h3 Hello #{username}
+			h3 Hello : #{username}
 			div
 				form(name='logout', method='POST', action='/logout')
 					input(type='submit', value='Log out')
