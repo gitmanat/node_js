@@ -18,4 +18,8 @@ html
 			div
 				a(href='/login') Log in
 
+			div(ng-app='Hello')
+				| {{ 'World' | sayhello}}
+
 		script(type='text/javascript', src='/lib/angular/angular.min.js')
+		script(type='text/javascript', src='/application.js')
