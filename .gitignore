@@ -1,1 +1,4 @@
 node_modules/
+public/img/
+bower_components/
+public/lib/

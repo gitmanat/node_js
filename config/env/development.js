@@ -8,7 +8,7 @@ module.exports = {
 		clientSecret: '<your clientSecret>',
 		callbackURL: 'http://localhost:3000/oauth/facebook/callback'
 	},
-	
+
 	google: {
 		clientID: '<Google clientID>',
 		clientSecret: '<Google clientSecret>',

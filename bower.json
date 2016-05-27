@@ -1,0 +1,21 @@
+{
+  "name": "MyProject",
+  "description": "My Sample Project",
+  "main": "",
+  "authors": [
+    "ManatOffice <manatccna@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/gitmanat/node_js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4"
+  }
+}
