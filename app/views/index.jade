@@ -18,8 +18,12 @@ html
 			div
 				a(href='/login') Log in
 
-			div(ng-app='Hello')
-				| {{ 'World' | sayhello}}
+		div(ng-app='Hello')
+			div
+				label(for='yourName') Your name is
+				input(name='yourName', type='text', ng-model='yourName')
+			div
+				| {{ yourName | sayhello }}
 
 		script(type='text/javascript', src='/lib/angular/angular.min.js')
 		script(type='text/javascript', src='/application.js')
