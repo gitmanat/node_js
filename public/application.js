@@ -1,7 +1,7 @@
 'use strice';
 
 var mainAppModuleName = 'Main';
-var mainAppModule = angular.module(mainAppModuleName, ['hello']);
+var mainAppModule = angular.module(mainAppModuleName, ['ui.router','hello']);
 
 mainAppModule.controller('NameController', ['$scope', function($scope) {
 	$scope.yourName = 'No Name';
