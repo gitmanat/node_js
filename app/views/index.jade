@@ -3,32 +3,30 @@ html
 	head
 		title= "Node JS"
 		link(href='/css/main.css', rel='stylesheet')
-	body
-		h2= title
-		
+	body#mainApp
 		if username
-			h3 Hello : #{username}
-			img(src='/img/logo.png', alt = 'Logo')
+			h2 Hello #{username}
 			div
-				form(name='logout', method='POST', action='/logout')
+				form(name='logout', method='post', action='/logout')
 					input(type='submit', value='Log out')
 		else
 			div
-				a(href='/signup') Sign up
+				a(ui-sref='signup') Sign up
 			div
-				a(href='/login') Log in
+				a(ui-sref='login') Log in
 
-		div#mainApp(ui-view)
-
-
+		div(ui-view)
 		script(type='text/javascript', src='/lib/angular/angular.min.js')
 		script(type='text/javascript', src='/lib/angular-ui-router/release/angular-ui-router.min.js')
 
 		script(type='text/javascript', src='/modules/core/core.client.module.js')
 		script(type='text/javascript', src='/modules/core/config/core.client.routes.js')
+		
+		script(type='text/javascript', src='/modules/users/users.client.module.js')
+		script(type='text/javascript', src='/modules/users/config/users.client.routes.js')
 
-		script(type='text/javascript', src='/modules/hello/hello.client.module.js')
-		script(type='text/javascript', src='/modules/hello/config/hello.client.routes.js')
-		script(type='text/javascript', src='/modules/hello/controllers/hello.client.controller.js')
-		script(type='text/javascript', src='/modules/hello/filters/hello.client.filter.js')
+		
 		script(type='text/javascript', src='/application.js')
+
+
+

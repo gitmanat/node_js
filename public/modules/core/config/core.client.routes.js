@@ -6,3 +6,5 @@ angular.module('core').config([
 		$urlRouterProvider.otherwise('/');
 	}
 ]);
+
+
