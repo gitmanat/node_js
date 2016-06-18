@@ -1,14 +1,30 @@
 angular.module('users').controller('AuthController', [
 	'$scope',
-	function($scope) {
+	'$http',
+	'$state',
+	function($scope, $http, $state) {
 		$scope.signup = function(isValid) {
 			if (isValid) {
-				alert('Ready to send signup request');
+				//alert('Ready to send signup request');
+				$http.post('/signup', $scope.user)
+				.success(function(response) {
+					$state.go('home');
+				})
+				.error(function(response) {
+					$scope.error = response.message;
+				});
 			}
 		};
 		$scope.login = function(isValid) {
 			if (isValid) {
-				alert('Ready to send login request');
+				//alert('Ready to send login request');
+				$http.post('/login', $scope.user)
+				.success(function(response) {
+					$state.go('home');
+				})
+				.error(function(response) {
+					$scope.error = response.message;
+				});
 			}
 		};
 	}
